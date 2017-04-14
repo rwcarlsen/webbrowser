@@ -113,9 +113,6 @@ func (b browserCommand) Open(s string) error {
 
 func ensureValidURL(u *url.URL) string {
 	// Enforce a scheme (windows requires scheme to be set to work properly).
-	if u.Scheme != "https" {
-		u.Scheme = "http"
-	}
 	s := u.String()
 
 	// Escape characters not allowed by cmd/bash
